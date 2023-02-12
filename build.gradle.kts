@@ -14,7 +14,11 @@ fun readVersionFile(): String {
 }
 
 tasks.register("projectinfo") {
-    doLast { println("Project ${project.group}:${project.name}:${project.version}. Enjoy!") }
+    doLast { println("Project ${project.group}:${project.name}:${project.version} Enjoy!") }
+}
+
+tasks.register("zulu") {
+    doLast { println("Zulu") }
 }
 
 // Tasks modules can hook into. Analogue names, but different, to standard gradle tasks, like clean, build, assemble, etc.
