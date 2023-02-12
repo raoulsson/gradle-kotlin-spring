@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="~{fragments/header :: header}"></div>
+<body>
+<div id="dude-small">
+    <img th:src="@{${'/images/dude-pics/dude-' + randomPicNum + '.png'}}" width="170" alt="Dude Schmitz" src=""
+         class="dude-top-right"/>
+</div>
+<br/>
+
+<h1>Videogames</h1>
+<!--<h3>Page: <span th:text="${pageSubHeader}" th:remove="tag"/></h3>-->
+<h3>Page: [[${pageSubHeader}]]</h3>
+<div th:replace="~{fragments/site-links :: site-links}"></div>
+
+<p>
+    Demo bringing it all together with the latest of Spring Boot and Kotlin. For data reading, we use JOOQ, either to
+    build
+    a query only and passing it to JPA, or to build a query and map the result to a DTO.
+    For data manipulation, we use JPA Entities.
+</p>
+
+<h1>Add Data</h1>
+<form action="#" th:action="@{/create_new_entry}" th:object="${formData}" method="post">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Label</th>
+            <th>Value</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><label for="newGameName">Game Name</label></td>
+            <td><input id="newGameName" type="text" th:field="*{newGameName}">
+                <p th:if="${#fields.hasErrors('newGameName')}"
+                   th:text="${#strings.listJoin(#fields.errors('newGameName'), ', ')}">
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="selectedGenreId">Genre</label></td>
+            <td><select class="form-control" th:field="*{selectedGenreId}" id="selectedGenreId">
+                <option value="0">select genre</option>
+                <option th:each="genre : ${formData.allGenresDropDownData}"
+                        th:value="${genre.id}"
+                        th:text="${genre.genreName}">
+                </option>
+            </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!--    <p>Message: <input type="text" th:field="*{content}" /></p>-->
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

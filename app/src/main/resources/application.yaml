@@ -1,0 +1,52 @@
+# App specific config
+app:
+  name: "videogames"
+  config-properties:
+    title: "videogames Default"
+    banner:
+      title: "Warning"
+      content: "The videogames is under construction"
+
+# Base logging.level.web controls web related logging, useful for development
+# The library levels are set in logback-spring.xml
+logging:
+  level:
+    web: "DEBUG"
+
+
+# Spring config
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/video_games
+    username: user
+    password: password
+    driver-class-name: org.mariadb.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: VIDEO_GAMES
+        globally_quoted_identifiers: true
+        globally_quoted_identifiers_skip_column_definitions: true
+        ddl-auto: update
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 1831917306
+    clean-disabled: false
+  output:
+    ansi:
+      enabled: "ALWAYS"
+  thymeleaf:
+    prefix: classpath:/web/templates/
+  web:
+    resources:
+      static-locations: classpath:/web/static/
+  jooq:
+    sql-dialect: MYSQL
+
+
+

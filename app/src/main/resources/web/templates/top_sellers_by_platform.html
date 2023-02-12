@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="~{fragments/header :: header}"></div>
+<body>
+<div id="dude-small">
+    <img th:src="@{${'/images/dude-pics/dude-' + randomPicNum + '.png'}}" width="170" alt="Dude Schmitz" src="" class="dude-top-right"/>
+</div>
+<br/>
+
+<h1>Videogames</h1>
+<!--<h3>Page: <span th:text="${pageSubHeader}" th:remove="tag"/></h3>-->
+<h3>Page: [[${pageSubHeader}]]</h3>
+<div th:replace="~{fragments/site-links :: site-links}"></div>
+
+<p>
+    No JPA, just JOOQ query generation and JPA Mapping to DTO TopSellersByPlatformDTO
+</p>
+
+<div class="">
+    <h3>All the videogames sales, by platform!</h3>
+</div>
+
+<div class="videogames-list-div">
+    <table class="styled-table">
+        <tr class="table-header">
+            <th>Game</th>
+            <th>Genre</th>
+            <th>Platform</th>
+            <th>Year</th>
+            <th>Publisher</th>
+            <th>Global Sales (M)</th>
+        </tr>
+        <tr th:each="game : ${top_sellers_by_platform}">
+            <td>
+                <div th:text="${game.gameName}"/>
+            </td>
+            <td>
+                <div th:text="${game.genreName}"/>
+            </td>
+            <td>
+                <div th:text="${game.platformName}"/>
+            </td>
+            <td>
+                <div th:text="${game.releaseYear}"/>
+            </td>
+            <td>
+                <div th:text="${game.publisherName}"/>
+            </td>
+            <td>
+                <div th:text="${game.globalSales}"/>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

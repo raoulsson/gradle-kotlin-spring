@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<div th:replace="~{fragments/header :: header}"></div>
+<body onLoad="log('hello world!')">
+<div id="dude-small">
+    <img th:src="@{${'/images/dude-pics/dude-' + randomPicNum + '.png'}}" width="170" alt="Dude Schmitz" src="" class="dude-top-right"/>
+</div>
+<br/>
+
+<h1>Videogames</h1>
+<!--<h3>Page: <span th:text="${pageSubHeader}" th:remove="tag"/></h3>-->
+<h3>Page: [[${pageSubHeader}]]</h3>
+<div th:replace="~{fragments/site-links :: site-links}"></div>
+
+<p>
+    Demo bringing it all together with the latest of Spring Boot and Kotlin. For data reading, we use JOOQ, either to build
+    a query only and passing it to JPA, or to build a query and map the result to a DTO.
+    For data manipulation, we use JPA Entities.
+</p>
+
+<div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

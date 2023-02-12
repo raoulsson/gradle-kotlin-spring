@@ -35,6 +35,6 @@ The Dashboard:
 
     gradle :message-dashboard:bootRun
 
-And now visit <http://localhost:8080/dashboard/Mr.Bean>
+And now visit <http://localhost:8080/dashboard/stuff>
 
-You can enter every name in place of "Mr.Bean". 
+You can enter every name in place of "stuff". 
