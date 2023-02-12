@@ -11,8 +11,6 @@ import org.springframework.stereotype.Component
 import java.math.BigDecimal
 import com.example.videogames.jooq.tables.Game
 
-(com.example.videogames.jooq.tables)
-
 @Component
 class SqlBuilder(private val dsl: DSLContext) {
 

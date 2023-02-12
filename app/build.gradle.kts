@@ -1,8 +1,8 @@
 plugins {
     id("kotlin-conventions")
-    id("testing-conventions")
-    id("dokka-conventions")
-    id("spring-conventions")
+//    id("testing-conventions")
+//    id("dokka-conventions")
+//    id("spring-conventions")
 }
 
 val loremVersion: String by rootProject.extra

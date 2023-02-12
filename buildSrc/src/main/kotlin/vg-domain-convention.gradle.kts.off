@@ -1,0 +1,18 @@
+plugins {
+    id("vg-kotlin-convention")
+    id("vg-spring-convention")
+    id("java-test-fixtures")
+}
+
+val implementation by configurations
+val testImplementation by configurations
+
+dependencies {
+    implementation("org.slf4j:slf4j-api")
+    implementation("org.springframework:spring-context")
+
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-junit-jupiter")
+    testImplementation("org.hamcrest:hamcrest")
+}
