@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import java.math.BigDecimal
 import com.example.videogames.jooq.tables.Game
+import com.example.videogames.jooq.tables.references.*
 
 @Component
 class SqlBuilder(private val dsl: DSLContext) {

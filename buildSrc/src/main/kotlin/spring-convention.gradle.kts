@@ -9,6 +9,9 @@ plugins {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-logging")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("jakarta.servlet:jakarta.servlet-api")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
