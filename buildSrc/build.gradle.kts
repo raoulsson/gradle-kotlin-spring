@@ -41,6 +41,7 @@ dependencies {
 
     implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}") // 2.1.1
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${Versions.spotless}") // 6.6.1
+    implementation("org.flywaydb:flyway-gradle-plugin:${Versions.flyway}") // 9.14.1
 
     testImplementation("org.junit.jupiter:junit-jupiter:${Versions.junitJupiter}") // 5.8.2
     testImplementation("org.hamcrest:hamcrest:${Versions.hamcrest}") // 2.2
