@@ -1,25 +1,6 @@
-import org.gradle.kotlin.dsl.`kotlin-dsl`
-//import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     `kotlin-dsl`
-//    kotlin("jvm") version "1.6.21"
 }
-
-//java {
-//    toolchain {
-//        languageVersion.set(JavaLanguageVersion.of(Versions.javaTargetVersion))
-//    }
-//}
-//
-//kotlin {
-//    jvmToolchain {
-//        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(Versions.javaTargetVersion))
-//    }
-//}
-
-
-
 
 repositories {
     mavenCentral()
@@ -51,27 +32,29 @@ object Versions {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-noarg:${Versions.kotlinPlugin}")
-    implementation("org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:${Versions.kotlinPlugin}")
-    implementation("org.jetbrains.kotlin.plugin.spring:org.jetbrains.kotlin.plugin.spring.gradle.plugin:${Versions.kotlinPlugin}")
+    implementation("org.jetbrains.kotlin:kotlin-noarg:${Versions.kotlinPlugin}") // 1.6.10
+    implementation("org.jetbrains.kotlin.jvm:org.jetbrains.kotlin.jvm.gradle.plugin:${Versions.kotlinPlugin}") // 1.6.10
+    implementation("org.jetbrains.kotlin.plugin.spring:org.jetbrains.kotlin.plugin.spring.gradle.plugin:${Versions.kotlinPlugin}") // 1.6.10
 
-    implementation("org.springframework.boot:spring-boot-gradle-plugin:${Versions.springBoot}")
-    implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:${Versions.dependencyManagement}")
+    implementation("org.springframework.boot:spring-boot-gradle-plugin:${Versions.springBoot}") // 2.7.6
+    implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:${Versions.dependencyManagement}") // 1.0.11.RELEASE
+
+    implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}") // 2.1.1
+    implementation("com.diffplug.spotless:spotless-plugin-gradle:${Versions.spotless}") // 6.6.1
+
+    testImplementation("org.junit.jupiter:junit-jupiter:${Versions.junitJupiter}") // 5.8.2
+    testImplementation("org.hamcrest:hamcrest:${Versions.hamcrest}") // 2.2
 
 //    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 //    implementation("org.springframework.boot:spring-boot-starter-jooq")
 
 //    implementation("org.jetbrains.kotlin.plugin.spring:org.jetbrains.kotlin.plugin.spring.gradle.plugin:${Versions.kotlin}")
-//    implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}")
-//    implementation("com.diffplug.spotless:spotless-plugin-gradle:${Versions.spotless}")
 //    implementation("nu.studer:gradle-jooq-plugin:${Versions.studer}")
 //    implementation("org.jooq:jooq:${Versions.jooq}")
 //    implementation("org.jetbrains.dokka:dokka-gradle-plugin:${Versions.dokka}")
 ////    implementation("org.asciidoctor:asciidoctor-gradle-plugin:${Versions.asciidoctorPlugin}")
 ////    implementation("org.asciidoctor.jvm.convert:${Versions.asciidoctor}")
 //
-//    testImplementation("org.junit.jupiter:junit-jupiter:${Versions.junitJupiter}")
-//    testImplementation("org.hamcrest:hamcrest:${Versions.hamcrest}")
 //
 //
 //    implementation("org.jetbrains.kotlin:kotlin-reflect:${Versions.kotlin}")
