@@ -1,11 +1,7 @@
 plugins {
-    id("vg-kotlin-convention")
-    id("vg-spring-convention")
-    id("java-test-fixtures")
+    id("spring-convention") apply true
+    id("java-test-fixtures") apply true
 }
-
-val implementation by configurations
-val testImplementation by configurations
 
 dependencies {
     implementation("org.slf4j:slf4j-api")
