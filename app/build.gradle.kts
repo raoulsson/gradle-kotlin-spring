@@ -14,6 +14,12 @@ dependencies {
     implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
     implementation("jakarta.validation:jakarta.validation-api:3.0.2")
     implementation("jakarta.annotation:jakarta.annotation-api:2.1.1")
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api")
+
+
+
     implementation("commons-codec:commons-codec:1.15")
     implementation("jakarta.servlet:jakarta.servlet-api:6.0.0")
+    implementation("org.jooq:jooq-kotlin:3.17.8")
+
 }

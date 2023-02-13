@@ -19,7 +19,7 @@ object Versions {
     const val junit = "5.8.2"
     const val junitJupiter = "5.8.2"
     const val hamcrest = "2.2"
-    const val studer = "8.1"
+    const val studer = "8.0"
     const val jooq = "3.17.7"
     const val dokka = "1.7.20"
     const val flyway = "9.14.1"
@@ -42,9 +42,13 @@ dependencies {
     implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}") // 2.1.1
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${Versions.spotless}") // 6.6.1
     implementation("org.flywaydb:flyway-gradle-plugin:${Versions.flyway}") // 9.14.1
+    implementation("nu.studer.jooq:nu.studer.jooq.gradle.plugin:${Versions.studer}") // 8.0
 
     testImplementation("org.junit.jupiter:junit-jupiter:${Versions.junitJupiter}") // 5.8.2
     testImplementation("org.hamcrest:hamcrest:${Versions.hamcrest}") // 2.2
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api")
+
+
 
 //    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 //    implementation("org.springframework.boot:spring-boot-starter-jooq")

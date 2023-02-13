@@ -24,6 +24,7 @@ class GameService(
     val logger: Logger = LoggerFactory.getLogger(this::class.java)
 
     fun findAllGames(): Iterable<GameEntity> {
+        
         return jpaGameRepository.findAll(
             Sort.by("genre.genreName").ascending()
                 .and(Sort.by("gameName").ascending())
