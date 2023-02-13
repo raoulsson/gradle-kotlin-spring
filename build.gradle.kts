@@ -1,5 +1,17 @@
 buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.glassfish.jaxb:jaxb-runtime:4.0.0")
+        classpath("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+    }
     apply(from = "config.gradle.kts")
+}
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
 }
 
 val fileProjectVersion = readVersionFile()
@@ -8,6 +20,8 @@ allprojects {
     group = "com.example.videogames"
     version = fileProjectVersion
 }
+
+
 
 fun readVersionFile(): String {
     return rootDir.resolve("VERSION").readLines()[0].trim()

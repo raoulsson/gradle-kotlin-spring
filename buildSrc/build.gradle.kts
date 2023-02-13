@@ -46,7 +46,12 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter:${Versions.junitJupiter}") // 5.8.2
     testImplementation("org.hamcrest:hamcrest:${Versions.hamcrest}") // 2.2
-    implementation("jakarta.xml.bind:jakarta.xml.bind-api")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
+
+//    implementation("org.jooq:jooq-codegen-maven:3.17.8")
+
+    implementation("org.glassfish.jaxb:jaxb-runtime:4.0.0")
+    implementation("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
 
 
 

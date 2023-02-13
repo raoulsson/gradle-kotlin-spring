@@ -12,9 +12,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-jooq")
 
-    implementation("jakarta.persistence:jakarta.persistence-api")
-    implementation("jakarta.validation:jakarta.validation-api")
-	implementation("jakarta.xml.bind:jakarta.xml.bind-api")
+
 
 	implementation("org.flywaydb:flyway-core")
 	implementation("org.flywaydb:flyway-mysql")
@@ -23,6 +21,9 @@ dependencies {
 	implementation("com.h2database:h2")
 	implementation("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.liquibase:liquibase-core")
+
+	implementation("org.glassfish.jaxb:jaxb-runtime")
+	implementation("jakarta.xml.bind:jakarta.xml.bind-api")
 
 }
 
