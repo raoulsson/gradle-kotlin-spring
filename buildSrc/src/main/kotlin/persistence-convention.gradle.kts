@@ -3,9 +3,11 @@ import org.jooq.meta.jaxb.Logging
 
 plugins {
     id("spring-convention") apply true
-    id("org.jetbrains.kotlin.plugin.jpa") apply true
+//    id("org.jetbrains.kotlin.plugin.jpa") apply true
     id("org.flywaydb.flyway") apply true
     id("nu.studer.jooq") apply true
+    kotlin("plugin.jpa") apply true
+
 }
 
 dependencies {

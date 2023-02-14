@@ -14,44 +14,72 @@ java.sourceSets["main"].java {
     srcDir("src/main/jooq")
 }
 
+configurations {
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
+    }
+}
+
 dependencies {
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-
-    jooqGenerator("org.glassfish.jaxb:jaxb-runtime")
-    jooqGenerator("jakarta.xml.bind:jakarta.xml.bind-api")
-
-    jooqGenerator("jakarta.xml.bind:jakarta.xml.bind-api")
-
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-rest")
+    implementation("org.springframework.boot:spring-boot-starter-hateoas")
+    implementation("org.springframework.boot:spring-boot-starter-jooq")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-web-services")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    runtimeOnly("org.springframework.boot:spring-boot-devtools")
-//    kapt("org.springframework.boot:spring-boot-configuration-processor")
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(module = "mockito-core")
-        exclude(module = "junit-vintage-engine")
-    }
-    testImplementation("org.junit.jupiter:junit-jupiter-api")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-    testImplementation("com.ninja-squad:springmockk:4.0.0")
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-    implementation("org.springframework.boot:spring-boot-starter-data-rest")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    testImplementation("org.springframework.restdocs:spring-restdocs-asciidoctor")
-    testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
-    implementation("org.springframework.boot:spring-boot-starter-jooq")
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-mysql")
-    implementation("org.jooq:jooq-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.liquibase:liquibase-core")
+//    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.h2database:h2")
-    jooqGenerator("com.h2database:h2")
     runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
-    jooqGenerator("org.mariadb.jdbc:mariadb-java-client")
-    implementation("org.fusesource.jansi:jansi:2.4.0")
-    implementation("commons-codec:commons-codec:1.15")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
+    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.security:spring-security-test")
+
+//    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+//
+//    jooqGenerator("org.glassfish.jaxb:jaxb-runtime")
+//    jooqGenerator("jakarta.xml.bind:jakarta.xml.bind-api")
+//
+//    jooqGenerator("jakarta.xml.bind:jakarta.xml.bind-api")
+//
+//    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+//    implementation("org.springframework.boot:spring-boot-starter-web")
+//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+//    implementation("org.jetbrains.kotlin:kotlin-reflect")
+//    runtimeOnly("org.springframework.boot:spring-boot-devtools")
+////    kapt("org.springframework.boot:spring-boot-configuration-processor")
+//    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+//        exclude(module = "mockito-core")
+//        exclude(module = "junit-vintage-engine")
+//    }
+//    testImplementation("org.junit.jupiter:junit-jupiter-api")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+//    testImplementation("com.ninja-squad:springmockk:4.0.0")
+//    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
+//    implementation("org.springframework.boot:spring-boot-starter-data-rest")
+//    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+//    testImplementation("org.springframework.restdocs:spring-restdocs-asciidoctor")
+//    testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
+//    implementation("org.springframework.boot:spring-boot-starter-jooq")
+//    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+//    implementation("org.flywaydb:flyway-core")
+//    implementation("org.flywaydb:flyway-mysql")
+//    implementation("org.jooq:jooq-kotlin")
+//    runtimeOnly("com.h2database:h2")
+//    jooqGenerator("com.h2database:h2")
+//    runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+//    jooqGenerator("org.mariadb.jdbc:mariadb-java-client")
+//    implementation("org.fusesource.jansi:jansi:2.4.0")
+//    implementation("commons-codec:commons-codec:1.15")
+//    implementation("org.springframework.boot:spring-boot-starter-validation")
 
 //    jooqGenerator("org.mariadb.jdbc:mariadb-java-client")
 //
