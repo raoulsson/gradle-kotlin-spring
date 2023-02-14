@@ -1,10 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-repositories {
-    mavenCentral()
-    google()
-}
-
 plugins {
     kotlin("jvm") apply true
 }
@@ -13,6 +8,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("commons-codec:commons-codec")
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-junit-jupiter")
+    testImplementation("org.hamcrest:hamcrest")
 }
 
 tasks.withType<KotlinCompile> {

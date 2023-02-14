@@ -1,6 +1,8 @@
 buildscript {
     repositories {
         mavenCentral()
+        gradlePluginPortal()
+
     }
     dependencies {
         classpath("org.glassfish.jaxb:jaxb-runtime:4.0.0")
@@ -20,8 +22,6 @@ allprojects {
     group = "com.example.videogames"
     version = fileProjectVersion
 }
-
-
 
 fun readVersionFile(): String {
     return rootDir.resolve("VERSION").readLines()[0].trim()
