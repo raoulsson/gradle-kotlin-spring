@@ -2,7 +2,7 @@ package com.example.videogames.dao
 
 import com.example.videogames.dto.GameAndGenreDTO
 import com.example.videogames.dto.TopSellersByPlatformDTO
-import javax.persistence.EntityManager
+import jakarta.persistence.EntityManager
 import org.jooq.*
 import org.jooq.conf.ParamType
 import org.slf4j.Logger
