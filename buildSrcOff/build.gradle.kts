@@ -39,7 +39,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-gradle-plugin:${Versions.springBoot}") // 2.7.6
     implementation("io.spring.dependency-management:io.spring.dependency-management.gradle.plugin:${Versions.dependencyManagement}") // 1.0.11.RELEASE
 
-    implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}") // 2.1.1
+    //implementation("org.liquibase:liquibase-gradle-plugin:${Versions.liquibasePlugin}") // 2.1.1
     implementation("com.diffplug.spotless:spotless-plugin-gradle:${Versions.spotless}") // 6.6.1
     implementation("org.flywaydb:flyway-gradle-plugin:${Versions.flyway}") // 9.14.1
     implementation("nu.studer.jooq:nu.studer.jooq.gradle.plugin:${Versions.studer}") // 8.0

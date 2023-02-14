@@ -4,6 +4,7 @@
 package com.example.videogames.jooq
 
 
+import com.example.videogames.jooq.tables.Databasechangeloglock
 import com.example.videogames.jooq.tables.FlywaySchemaHistory
 import com.example.videogames.jooq.tables.Game
 import com.example.videogames.jooq.tables.GamePlatform
@@ -33,6 +34,11 @@ open class VideoGames : SchemaImpl("video_games", DefaultCatalog.DEFAULT_CATALOG
          */
         val VIDEO_GAMES: VideoGames = VideoGames()
     }
+
+    /**
+     * The table <code>video_games.DATABASECHANGELOGLOCK</code>.
+     */
+    val DATABASECHANGELOGLOCK: Databasechangeloglock get() = Databasechangeloglock.DATABASECHANGELOGLOCK
 
     /**
      * The table <code>video_games.flyway_schema_history</code>.
@@ -82,6 +88,7 @@ open class VideoGames : SchemaImpl("video_games", DefaultCatalog.DEFAULT_CATALOG
     override fun getCatalog(): Catalog = DefaultCatalog.DEFAULT_CATALOG
 
     override fun getTables(): List<Table<*>> = listOf(
+        Databasechangeloglock.DATABASECHANGELOGLOCK,
         FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY,
         Game.GAME,
         GamePlatform.GAME_PLATFORM,

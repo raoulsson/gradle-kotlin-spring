@@ -37,5 +37,6 @@ spring:
     baseline-on-migrate: true
     baseline-version: 1674208668
     clean-disabled: false
-
+  liquibase:
+    enabled: false
 

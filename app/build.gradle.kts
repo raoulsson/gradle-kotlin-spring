@@ -46,7 +46,7 @@ dependencies {
     implementation("org.flywaydb:flyway-mysql")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.liquibase:liquibase-core")
+//    implementation("org.liquibase:liquibase-core")
 //    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity6")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.h2database:h2")
@@ -166,44 +166,44 @@ val jooqDb = mapOf(
     "jooq_db_type" to "org.jooq.meta.mysql.MySQLDatabase"
 )
 
-jooq {
-    version.set("3.17.6")
-    edition.set(nu.studer.gradle.jooq.JooqEdition.OSS)
-
-    configurations {
-        create("main") {
-            jooqConfiguration.apply {
-                logging = org.jooq.meta.jaxb.Logging.DEBUG
-                jdbc.apply {
-                    driver = jooqDb["driver"]
-                    url = jooqDb["url"]
-                    user = jooqDb["user"]
-                    password = jooqDb["password"]
-                }
-                generator.apply {
-                    name = "org.jooq.codegen.KotlinGenerator"
-                    database.apply {
-                        name = jooqDb["jooq_db_type"]
-                        inputSchema = jooqDb["schema"]
-                    }
-                    generate.apply {
-                        isDeprecated = false
-                        isRecords = true
-                        isImmutablePojos = false
-                        isFluentSetters = true
-                        //withPojos(true)
-                        //withDaos(true)
-                        //withSerializablePojos(false)
-                        withSequences(true)
-                    }
-                    target.apply {
-                        packageName = "com.example.videogames.jooq"
-                        directory = "src/main/jooq/"
-                    }
-                    strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
-                }
-            }
-        }
-    }
-}
-
+//jooq {
+//    version.set("3.17.6")
+//    edition.set(nu.studer.gradle.jooq.JooqEdition.OSS)
+//
+//    configurations {
+//        create("main") {
+//            jooqConfiguration.apply {
+//                logging = org.jooq.meta.jaxb.Logging.DEBUG
+//                jdbc.apply {
+//                    driver = jooqDb["driver"]
+//                    url = jooqDb["url"]
+//                    user = jooqDb["user"]
+//                    password = jooqDb["password"]
+//                }
+//                generator.apply {
+//                    name = "org.jooq.codegen.KotlinGenerator"
+//                    database.apply {
+//                        name = jooqDb["jooq_db_type"]
+//                        inputSchema = jooqDb["schema"]
+//                    }
+//                    generate.apply {
+//                        isDeprecated = false
+//                        isRecords = true
+//                        isImmutablePojos = false
+//                        isFluentSetters = true
+//                        //withPojos(true)
+//                        //withDaos(true)
+//                        //withSerializablePojos(false)
+//                        withSequences(true)
+//                    }
+//                    target.apply {
+//                        packageName = "com.example.videogames.jooq"
+//                        directory = "src/main/jooq/"
+//                    }
+//                    strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
+//                }
+//            }
+//        }
+//    }
+//}
+//

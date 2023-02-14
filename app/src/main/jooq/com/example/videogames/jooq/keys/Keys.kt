@@ -4,6 +4,7 @@
 package com.example.videogames.jooq.keys
 
 
+import com.example.videogames.jooq.tables.Databasechangeloglock
 import com.example.videogames.jooq.tables.FlywaySchemaHistory
 import com.example.videogames.jooq.tables.Game
 import com.example.videogames.jooq.tables.GamePlatform
@@ -13,6 +14,7 @@ import com.example.videogames.jooq.tables.Platform
 import com.example.videogames.jooq.tables.Publisher
 import com.example.videogames.jooq.tables.Region
 import com.example.videogames.jooq.tables.RegionSales
+import com.example.videogames.jooq.tables.records.DatabasechangeloglockRecord
 import com.example.videogames.jooq.tables.records.FlywaySchemaHistoryRecord
 import com.example.videogames.jooq.tables.records.GamePlatformRecord
 import com.example.videogames.jooq.tables.records.GamePublisherRecord
@@ -34,6 +36,7 @@ import org.jooq.impl.Internal
 // UNIQUE and PRIMARY KEY definitions
 // -------------------------------------------------------------------------
 
+val KEY_DATABASECHANGELOGLOCK_PRIMARY: UniqueKey<DatabasechangeloglockRecord> = Internal.createUniqueKey(Databasechangeloglock.DATABASECHANGELOGLOCK, DSL.name("KEY_DATABASECHANGELOGLOCK_PRIMARY"), arrayOf(Databasechangeloglock.DATABASECHANGELOGLOCK.ID), true)
 val KEY_FLYWAY_SCHEMA_HISTORY_PRIMARY: UniqueKey<FlywaySchemaHistoryRecord> = Internal.createUniqueKey(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, DSL.name("KEY_flyway_schema_history_PRIMARY"), arrayOf(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.INSTALLED_RANK), true)
 val KEY_GAME_PRIMARY: UniqueKey<GameRecord> = Internal.createUniqueKey(Game.GAME, DSL.name("KEY_game_PRIMARY"), arrayOf(Game.GAME.ID), true)
 val KEY_GAME_PLATFORM_PRIMARY: UniqueKey<GamePlatformRecord> = Internal.createUniqueKey(GamePlatform.GAME_PLATFORM, DSL.name("KEY_game_platform_PRIMARY"), arrayOf(GamePlatform.GAME_PLATFORM.ID), true)

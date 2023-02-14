@@ -3,8 +3,7 @@
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <charset>UTF-8</charset>
-            <pattern>[%d{HH:mm:ss.SSS}][%X{shortUserHash}][%X{shortRequestId}][%-5level] %msg [%logger{5}.%M\(%F:%L\)] %n%ex{50}</pattern>
-
+            <pattern>[%yellow(%d{HH:mm:ss.SSS})][%yellow(%X{shortUserHash})][%yellow(%X{shortRequestId})][%cyan(%-5level)] %msg %blue([%logger{5}.%M\(%F:%L\)]) %n%ex{50})</pattern>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
             <level>TRACE</level>

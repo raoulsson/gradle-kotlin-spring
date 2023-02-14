@@ -4,6 +4,7 @@
 package com.example.videogames.jooq.tables.references
 
 
+import com.example.videogames.jooq.tables.Databasechangeloglock
 import com.example.videogames.jooq.tables.FlywaySchemaHistory
 import com.example.videogames.jooq.tables.Game
 import com.example.videogames.jooq.tables.GamePlatform
@@ -15,6 +16,11 @@ import com.example.videogames.jooq.tables.Region
 import com.example.videogames.jooq.tables.RegionSales
 
 
+
+/**
+ * The table <code>video_games.DATABASECHANGELOGLOCK</code>.
+ */
+val DATABASECHANGELOGLOCK: Databasechangeloglock = Databasechangeloglock.DATABASECHANGELOGLOCK
 
 /**
  * The table <code>video_games.flyway_schema_history</code>.
