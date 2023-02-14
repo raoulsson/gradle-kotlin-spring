@@ -5,7 +5,9 @@ buildscript {
 
     }
     dependencies {
-        classpath("org.glassfish.jaxb:jaxb-runtime:4.0.0")
+//        classpath("org.glassfish.jaxb:jaxb-runtime:4.0.0")
+        classpath("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
+
         classpath("jakarta.xml.bind:jakarta.xml.bind-api:4.0.0")
     }
     apply(from = "config.gradle.kts")
