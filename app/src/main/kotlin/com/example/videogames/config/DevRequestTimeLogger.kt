@@ -32,7 +32,7 @@ class DevRequestTimeLogger: HandlerInterceptor {
         MDC.put("shortRequestId", requestId.substring(0, 8))
         val shortUserHash = calcUserHash(request)
         MDC.put("shortUserHash", shortUserHash.substring(0, 8))
-        LOGGER.info("--> {} \"{}\" : req-id: {}", request.method, request.requestURI, requestId)
+        LOGGER.info("${String(Character.toChars(0x27F6))} {} \"{}\" : req-id: {}", request.method, request.requestURI, requestId)
         return true
     }
 
@@ -40,7 +40,7 @@ class DevRequestTimeLogger: HandlerInterceptor {
         val requestId = request.getAttribute("requestId") as String
         val executeTime = System.currentTimeMillis() - request.getAttribute("startTime") as Long
         LOGGER.warn(
-            "<-- {} \"{}\" : {} - {}ms req-id: {}",
+            "${String(Character.toChars(0x27F5))} {} \"{}\" : {} - {}ms req-id: {}",
             request.method,
             request.requestURI,
             response.status,

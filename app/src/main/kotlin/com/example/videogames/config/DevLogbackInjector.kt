@@ -31,8 +31,8 @@ class DevLogbackInjector: InitializingBean {
                 url.openConnection()
                 loggerContext.reset()
                 ci.configureByResource(url)
-                LOGGER.info("${String(Character.toChars(0x1F4A5))}Colored Dev Logs! " +
-                        "${String(Character.toChars(0x1F606))}Yay! " +
+                LOGGER.info("${String(Character.toChars(0x1F4A5))}Colored Dev Logs!" +
+                        "${String(Character.toChars(0x1F606))}Yay!" +
                         String(Character.toChars(0x1F920)))
             } catch (e: FileNotFoundException) {
                 LOGGER.error("Logback configuration file not found: {}", url)
