@@ -1,6 +1,7 @@
 package com.example.videogames
 
 import com.example.videogames.config.ConfigProperties
+import com.example.videogames.config.InterceptorConfig
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication

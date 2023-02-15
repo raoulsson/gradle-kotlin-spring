@@ -13,14 +13,12 @@ import java.net.URL
 
 
 @Component
-class LogbackReloader: InitializingBean {
+class DevLogbackInjector: InitializingBean {
 
     @Autowired
     var env: Environment? = null
 
     override fun afterPropertiesSet() {
-        LOGGER.info("LogbackReloader init. Env: ${env?.activeProfiles?.contentToString()}")
-
         val runningInDev = env?.activeProfiles?.any { it.contains( "dev") || it.contains( "test") } ?: false
 
         if (runningInDev) {
@@ -33,6 +31,9 @@ class LogbackReloader: InitializingBean {
                 url.openConnection()
                 loggerContext.reset()
                 ci.configureByResource(url)
+                LOGGER.info("${String(Character.toChars(0x1F4A5))}Colored Dev Logs! " +
+                        "${String(Character.toChars(0x1F606))}Yay! " +
+                        String(Character.toChars(0x1F920)))
             } catch (e: FileNotFoundException) {
                 LOGGER.error("Logback configuration file not found: {}", url)
             }
@@ -40,8 +41,8 @@ class LogbackReloader: InitializingBean {
     }
 
     companion object {
-        const val LOGBACK_DEV_CONFIG_FILE = "classpath:logback-spring-colored.xml"
-        val LOGGER: Logger = LoggerFactory.getLogger(LogbackReloader::class.java)
+        const val LOGBACK_DEV_CONFIG_FILE = "classpath:logback-dev.xml"
+        val LOGGER: Logger = LoggerFactory.getLogger(DevLogbackInjector::class.java)
     }
 
 }
